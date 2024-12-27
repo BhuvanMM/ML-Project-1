@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .hero-section {
+            background: url('https://source.unsplash.com/1600x900/?business,technology') no-repeat center center;
+            background-size: cover;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .form-group input,
+        .form-group select {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
+        }
+
+        .form-group input::placeholder {
+            color: #ccc;
+        }
+
+        .submit-btn {
+            background: #e63946;
+            color: #fff;
+        }
+
+        .submit-btn:hover {
+            background: #d62839;
+        }
+
+        .card {
+            background: #2a2a2a;
+            border: 1px solid #444;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="text-gray-200">
+
+    <!-- Navbar -->
+    <header class="bg-black shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-6 py-3">
+            <h1 class="text-2xl font-bold text-red-500">Churn Predictor</h1>
+            <nav class="space-x-6">
+                <a href="#about" class="hover:text-red-400">About</a>
+                <a href="#features" class="hover:text-red-400">Features</a>
+                <a href="#form" class="hover:text-red-400">Predict</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-screen relative flex items-center justify-center text-center">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 space-y-6">
+            <h2 class="text-5xl font-bold" data-aos="fade-up">Predict Customer Churn</h2>
+            <p class="text-lg" data-aos="fade-up" data-aos-delay="200">Leverage AI to make informed decisions about your customers.</p>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <a href="#form" class="bg-red-500 py-3 px-8 text-black font-bold rounded-lg hover:bg-red-600 mt-8 inline-block">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-red-500" data-aos="fade-up">About Us</h2>
+            <p class="text-center text-gray-400 mt-4 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Our Customer Churn Prediction tool helps businesses retain their most valuable customers by predicting churn
+                and providing actionable insights.
+            </p>
+        </div>
+    </section>
+
+    
+    <section id="features" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-red-500" data-aos="fade-up">Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-lg shadow-lg text-center card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold mb-4 text-red-400">AI Predictions</h3>
+                    <p>State-of-the-art machine learning models for accurate insights.</p>
+                </div>
+                <div class="p-6 rounded-lg shadow-lg text-center card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold mb-4 text-red-400">Interactive Dashboard</h3>
+                    <p>User-friendly interface for seamless interaction.</p>
+                </div>
+                <div class="p-6 rounded-lg shadow-lg text-center card" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-semibold mb-4 text-red-400">Actionable Metrics</h3>
+                    <p>Understand your customer data like never before.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="form" class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-6 text-red-500" data-aos="fade-up">Predict Customer Churn</h2>
+            <form action="/predict" method="post" class="bg-gray-900 p-8 rounded-lg shadow-lg space-y-6" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium">Credit Score</label>
+                        <input type="number" name="credit_score" placeholder="Enter Credit Score" class="w-full p-3 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Geography</label>
+                        <select name="geography" class="w-full p-3 rounded-lg">
+                            <option value="1">France</option>
+                            <option value="2">Germany</option>
+                            <option value="3">Spain</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Gender</label>
+                        <select name="gender" class="w-full p-3 rounded-lg">
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Age</label>
+                        <input type="number" name="age" placeholder="Enter Age" class="w-full p-3 rounded-lg">
+                    </div>
+                    <div>
+                        <label lass="block text-sm font-medium">Tenure</label>
+                        <input type="number" name="tenure" id="tenure" class="w-full p-3 rounded-lg" required>
+                    </div>
+                    <div >
+                        <label for="balance" class="block text-sm font-medium">Balance</label>
+                        <input type="number" name="balance" id="balance" class="w-full p-3 rounded-lg" required>
+                    </div>
+                    <div>
+                        <label for="num_products" class="block text-sm font-medium">Number of Products</label>
+                        <input type="number" name="num_products" id="num_products" class="w-full p-3 rounded-lg" required>
+                    </div>
+                    <div >
+                        <label for="has_cr_card" class="block text-sm font-medium">Has Credit Card (1 = Yes, 0 = No)</label>
+                        <input type="number" name="has_cr_card" id="has_cr_card" class="w-full p-3 rounded-lg" required>
+                    </div>
+                    <div>
+                        <label for="is_active_member" class="block text-sm font-medium">Is Active Member (1 = Yes, 0 = No)</label>
+                        <input type="number" name="is_active_member" id="is_active_member" class="w-full p-3 rounded-lg" required>
+                    </div>
+                    <div >
+                        <label for="estimated_salary" class="block text-sm font-medium">Estimated Salary</label>
+                        <input type="number" name="estimated_salary" id="estimated_salary" class="w-full p-3 rounded-lg" required>
+                    </div>
+                    <div >
+                        <label for="customer_satisfaction_score" class="block text-sm font-medium">Customer Satisfaction Score (1-10)</label>
+                        <input type="number" name="customer_satisfaction_score" id="customer_satisfaction_score" class="w-full p-3 rounded-lg" required>
+                    </div>
+                    <div >
+                        <label for="total_transactions" class="block text-sm font-medium">Total Transactions</label>
+                        <input type="number" name="total_transactions" id="total_transactions" class="w-full p-3 rounded-lg" required>
+                    </div>
+                    <div >
+                        <label for="has_phone_service" class="block text-sm font-medium">Has Phone Service (1 = Yes, 0 = No)</label>
+                        <input type="number" name="has_phone_service" id="has_phone_service" class="w-full p-3 rounded-lg" required>
+                    </div>
+                    
+                </div>
+                <button type="submit" class="w-full bg-red-500 py-3 rounded-lg text-black font-bold hover:bg-red-600">Predict Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-black text-gray-400 py-6 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Churn Predictor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Initialization -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+
+</body>
+
+</html>
