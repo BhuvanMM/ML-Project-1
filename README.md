@@ -4,9 +4,9 @@ This project is a Machine Learning model built to solve a regression/classificat
 
 ## 📹 Demo
 
-Watch the full workflow and implementation here:  
-🎥 [Video Link](https://youtu.be/xGe_yKGg9zM)
+[![Watch the video](https://img.youtube.com/vi/xGe_yKGg9zM/maxresdefault.jpg)](https://youtu.be/xGe_yKGg9zM)
 
+👉 Click the image to watch the walkthrough on YouTube.
 
 ## 🛠️ Technologies Used
 
