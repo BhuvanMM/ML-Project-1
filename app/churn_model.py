@@ -7,7 +7,7 @@ import pickle
 import os
 
 # Load dataset
-def load_data(file_path='data/churn_data.csv'):
+def load_data(file_path='/Users/bhuvan/churn_model/data/churn_data.csv'):
     """Load the dataset from the given file path."""
     try:
         data = pd.read_csv(file_path)
