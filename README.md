@@ -5,7 +5,7 @@ This project is a Machine Learning model built to solve a regression/classificat
 ## 📹 Demo
 
 Watch the full workflow and implementation here:  
-🎥 [Screen Recording](https://github.com/BhuvanMM/ML-Project-1/blob/main/img/Screen%20Recording%202025-05-25%20at%2010.09.01%E2%80%AFPM.mov)
+🎥 [Screen Recording](https://youtu.be/xGe_yKGg9zM)
 
 
 ## 🛠️ Technologies Used
